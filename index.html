@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff7f2">
+
+    <title>Для тебе, сонечко 🌷</title>
+    <meta name="description" content="Маленький сюрприз на твій день народження.">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+    <main class="birthday-page">
+
+        <!-- Кнопка перемикання теми -->
+        <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Увімкнути темну тему"
+            title="Змінити тему"
+        >
+            <span id="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+
+        <!-- Головний екран -->
+        <section class="screen home-screen active" id="home-screen">
+            <div class="floating-emoji" aria-hidden="true">🌷</div>
+
+            <p class="eyebrow">Маленький сюрприз для тебе</p>
+
+            <h1>Для тебе, сонечко 🤍</h1>
+
+            <p class="intro-text">
+                Тут є дещо маленьке, але зроблене з теплом.
+                Обирай, куди хочеш завітати 🌸
+            </p>
+
+            <div class="main-buttons">
+                <button class="main-button" id="birthday-button" type="button">
+                    <span aria-hidden="true">🎂</span>
+                    З днем народження!
+                </button>
+
+                <button class="main-button secondary-button" id="support-button" type="button">
+                    <span aria-hidden="true">🤍</span>
+                    Трохи підтримки
+                </button>
+            </div>
+
+            <p class="little-note">Нехай тут тобі буде затишно ✨</p>
+        </section>
+
+        <!-- Екран привітання -->
+        <section class="screen content-screen" id="birthday-screen" hidden>
+            <button class="back-button" type="button" data-go-home>
+                ← На головну
+            </button>
+
+            <div class="floating-emoji" aria-hidden="true">🎁</div>
+
+            <p class="eyebrow">Сьогодні твій день</p>
+            <h2>З днем народження, сонечко! 🌷</h2>
+
+            <p class="content-text">
+                Нехай у твоєму житті буде більше теплих моментів,
+                щирих усмішок і приводів радіти навіть дрібницям.
+            </p>
+
+            <!-- Основний сюрприз -->
+            <div class="surprise-card">
+                <span class="surprise-emoji" aria-hidden="true">💗</span>
+                <p>Мені вдалося тебе здивувати?</p>
+
+                <div class="answer-buttons">
+                    <button id="yes-button" class="answer-button" type="button">
+                        Так 🥰❤️
+                    </button>
+
+                    <button id="no-button" class="answer-button no-button" type="button">
+                        Ні 🙃
+                    </button>
+                </div>
+
+                <p id="answer-message" class="answer-message" aria-live="polite"></p>
+            </div>
+
+            <!-- СЕКРЕТНА ОТКРЫТКА -->
+            <div class="letter-card">
+                <span class="letter-card-flower" aria-hidden="true">🌷</span>
+
+                <h3>Для тебе є ще дещо… 🤍</h3>
+
+                <p class="letter-intro">
+                    Маленький подарунок, який можна відкрити, коли захочеться.
+                </p>
+
+                <button
+                    class="letter-open-button"
+                    id="open-surprise-button"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="personal-surprise"
+                >
+                    💌 Відкрити сюрприз
+                </button>
+
+                <!-- Содержимое сюрприза -->
+                <div class="personal-surprise" id="personal-surprise" hidden>
+
+                    <!-- Закрытый конверт -->
+                    <div class="envelope-scene" id="envelope-scene">
+                        <div class="envelope">
+                            <div class="envelope-back"></div>
+
+                            <div class="envelope-paper">
+                                <span>💌</span>
+                                <p>Для тебе є дещо особливе…</p>
+                            </div>
+
+                            <div class="envelope-front"></div>
+                            <div class="envelope-flap"></div>
+
+                            <div class="envelope-seal" aria-hidden="true">
+                                💗
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Фото и пожелание: скрыты до открытия конверта -->
+                    <div
+                        class="letter-revealed-content"
+                        id="letter-revealed-content"
+                        hidden
+                    >
+
+                        <!-- Декоративные сердечки и цветы -->
+                        <div class="envelope-decoration" aria-hidden="true">
+                            <span>💗</span>
+                            <span>🌸</span>
+                            <span>♡</span>
+                            <span>🌷</span>
+                            <span>💕</span>
+                        </div>
+
+                        <!-- Фотография -->
+                        <div class="personal-photo-frame">
+
+                            <!-- Заглушка, пока фото не добавлено -->
+                            <div
+                                class="personal-photo-placeholder"
+                                id="photo-placeholder"
+                            >
+                                <span aria-hidden="true">🌷</span>
+                                <p>Тут буде твоя фотографія</p>
+                                <small>
+                                    Маленька пам’ять у красивій рамці 🤍
+                                </small>
+                            </div>
+
+                            <img
+                                class="personal-photo"
+                                id="personal-photo"
+                                src="assets/mala-photo.jpg"
+                                alt="Особлива фотографія"
+                                hidden
+                            >
+
+                            <p class="photo-caption">
+                                З теплом і усмішкою ♡
+                            </p>
+                        </div>
+
+                        <!-- Личное пожелание -->
+                        <div class="personal-letter">
+                            <h4>Тобі, просто тому, що ти — це ти 🌸</h4>
+
+                            <p>
+                                Бажаю тобі не втрачати себе, вірити у власні сили,
+                                частіше усміхатися й знаходити радість навіть у
+                                маленьких речах. Нехай поруч будуть люди, з якими
+                                можна бути собою, а попереду чекає багато хорошого. 🤍
+                            </p>
+
+                            <p class="letter-signature">Обіймаю 💗</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- КОНЕЦ СЕКРЕТНОЙ ОТКРЫТКИ -->
+
+        </section>
+
+        <!-- Екран підтримки -->
+        <section class="screen content-screen" id="support-screen" hidden>
+            <button class="back-button" type="button" data-go-home>
+                ← На головну
+            </button>
+
+            <div class="floating-emoji" aria-hidden="true">☁️</div>
+
+            <p class="eyebrow">Можна просто видихнути</p>
+            <h2>Трохи тепла для тебе 🤍</h2>
+
+            <p class="content-text">
+                Не обов'язково завжди бути сильною.
+                Іноді можна просто відпочити, загорнутися
+                в щось м'яке й дозволити собі нічого не поспішати.
+            </p>
+
+            <div class="surprise-card support-card">
+                <span class="surprise-emoji" aria-hidden="true">🤍</span>
+                <p>Маленьке нагадування</p>
+
+                <button id="kindness-button" class="answer-button" type="button">
+                    Відкрити 🤍
+                </button>
+
+                <p id="kindness-message" class="answer-message" aria-live="polite"></p>
+            </div>
+
+            <div class="mini-garden">
+                <p>Маленький сад 🌱</p>
+                <p class="garden-hint">
+                    Торкнись квіточки — може, там щось є.
+                </p>
+
+                <button
+                    id="flower-button"
+                    class="flower-button"
+                    type="button"
+                    aria-label="Відкрити квіточку"
+                >
+                    🌷
+                </button>
+
+                <p id="flower-message" class="answer-message" aria-live="polite"></p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
+
